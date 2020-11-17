@@ -9,30 +9,30 @@ class Solution:
         }
 
         output = 0
-        currentValue = 0
-        middleValue = 0
-        
+        current = 0
+        middle = 0
+
         for key in s[::-1]:
-            previousValue = currentValue
-            currentValue = romanAlphabet[key]
+            previous = current
+            current = romanAlphabet[key]
 
-            if previousValue == 0:
-                middleValue = currentValue       
+            if previous == 0:
+                middle = current      
             else:
-                if previousValue == currentValue:
-                    middleValue += currentValue
+                if previous == current:
+                    middle += current
 
-                elif previousValue > currentValue:
-                    output += previousValue - currentValue
-                    currentValue = 0
-                    middleValue = 0
+                elif previous > current:
+                    output += previous - current
+                    current = 0
+                    middle = 0
                 
-                elif previousValue < currentValue:
-                    output += currentValue + middleValue
-                    currentValue = 0
-                    middleValue = 0
+                elif previous < current:
+                    output += current + middle
+                    current = 0
+                    middle = 0
         
-        if middleValue != 0:
-            output += middleValue
+        if middle != 0:
+            output += middle
 
         return output
