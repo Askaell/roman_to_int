@@ -4,7 +4,7 @@ class Solution:
             return None
         s = s.upper()
 
-        romanAlphabet = {
+        romanNumbers = {
             'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000
         }
 
@@ -14,7 +14,7 @@ class Solution:
 
         for key in s[::-1]:
             previous = current
-            current = romanAlphabet[key]
+            current = romanNumbers[key]
 
             if previous == 0:
                 middle = current      
